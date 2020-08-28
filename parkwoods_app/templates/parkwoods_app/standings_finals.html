@@ -1,0 +1,75 @@
+{% extends "parkwoods_app/base.html" %}
+
+
+{% block page_header %}
+
+{% endblock page_header %}
+
+{% block content %}
+{% load static %}
+<div class="container">
+    <h3>NYHL Midget Senior Tier 1 Standings (2019 ~ 2020 Finals)</h3>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>Team</th>
+                <th>GP</th>
+                <th>W</th>
+                <th>L</th>
+                <th>T</th>
+                <th>PTS</th>
+                <th>GF</th>
+                <th>GA</th>
+                <th>GFAVG</th>
+				<th>SEASON</th>
+				<th>UPDATE DATE</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for standing in standings %}
+
+			<tr class="{% cycle 'table-active' 'table-success' 'table-warning' 'table-light' %}">            
+                <td nowrap>
+				<span style="margin-right: 5px;"><b>{{ forloop.counter }}</b></span>
+				{% if standing.name == 'Parkwoods Stars' %}
+					<img style="height: 25px;" src="{% static "parkwoods_app/parkwoods.png" %}">
+				{% elif standing.name == 'Vaughan Blue' %}
+					<img style="height: 25px;" src="{% static "parkwoods_app/VaughanBlue.png" %}"> 
+				{% elif standing.name == 'Amesbury White' %}
+					<img style="height: 25px;" src="{% static "parkwoods_app/Amesbury.png" %}" >
+				{% elif standing.name == 'George Bell Navy' %}
+					<img style="height: 25px;" src="{% static "parkwoods_app/GeorgeBellNavy.png" %}" >
+				{% elif standing.name == 'East York Blue' %}
+					<img style="height: 25px;" src="{% static "parkwoods_app/EastYork.png" %}" >
+				{% elif standing.name == 'Scarborough' %}
+					<img style="height: 25px;" src="{% static "parkwoods_app/Scarborough.png" %}"> 
+				{% elif standing.name == 'Faustina Black' %}
+					<img style="height: 25px;" src="{% static "parkwoods_app/FaustinaBlack.png" %}" >
+				{% elif standing.name == 'Duffield Red' %}
+					<img style="height: 25px;" src="{% static "parkwoods_app/DuffieldRed.png" %}" >
+				{% elif standing.name == 'George Bell White' %}
+					<img style="height: 25px;" src="{% static "parkwoods_app/GeorgeBellWhite.png" %}" >
+				{% else %}
+					no logo
+				{% endif %}				
+				{{ standing.name }}</td>
+                <td>{{ standing.gp }}</td>
+                <td>{{ standing.wins }}</td>
+                <td>{{ standing.loses }}</td>
+                <td>{{ standing.ties }}</td>
+                <td>{{ standing.pts }}</td>
+                <td>{{ standing.gf }}</td>
+                <td>{{ standing.ga }}</td>
+                <td>{{ standing.gfavg }}</td>
+				<td>{{ standing.season }}</td>
+				<td>{{ standing.date_added|date:'M d, Y H:i' }}</td>
+            </tr>
+          
+            {% endfor %}		
+        </tbody>  
+    </table>
+	<p><b>LEGEND: GP</b> - Games Played; <b>W</b> - Wins; <b>L</b> - Losses; <b>T</b> - Ties; <b>PTS</b> - Points; <b>GF</b> - Goals For; <b>GA</b> - Goals Against; 
+	<b>GFAVG</b> - Goals For Average; <b>WY20</b> - Winter 2020; <b>PL20</b> - Playoff 2020; <b>SF20</b> - Semi-Finals 2020; <b>FN20</b> - Finals 2020
+</div>
+
+{% endblock content %}

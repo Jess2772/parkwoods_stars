@@ -1,0 +1,15 @@
+{% extends "parkwoods_app/base.html" %}
+
+{% block content %}
+<div class="pb-2 mb-2 border-bottom">
+</div>
+<p><a href="{% url 'parkwoods_app:topic' topic.id %}">{{ topic }}</a></p>
+
+<p>Add a new entry:</p>
+<form action="{% url 'parkwoods_app:new_entry' topic.id %}" method='post'>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button name='submit'>Add entry</button>
+</form>
+
+{% endblock content %}

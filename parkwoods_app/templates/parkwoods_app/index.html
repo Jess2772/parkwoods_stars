@@ -1,0 +1,22 @@
+{% extends "parkwoods_app/base.html" %}
+
+{% block page_header %}
+
+<div class="pb-2 mb-2 border-bottom">
+  <div class="jumbotron">
+    <h1 class="display-3">A Passion for Junior hockey</h1>
+    <p class="lead">
+      The <a href="https://1drv.ms/v/s!AilqDLjqHaNauFRp-1QSoeV0PYor?e=kd7J0I" target="_blank">Parkwoods Midget Senior Stars</a> was established in 2009 and plays at the Tier 1 Select level in the
+      <a href="http://www.nyhl.on.ca" target="_blank">North York Hockey League </a>(NYHL) located in Toronto, Ontario, Canada. The majority of players have been on this
+      team ever since they started playing youth hockey. The team has made four NYHL Tier 1 Finals appearances, winning the
+      championship in 2013. Parkwoods Hockey League encourages more ice time,
+      hence this select team only has thirteen skaters and two goalies. The head coach (right first) is <b>Francis Cooke</b>
+      and the assistant coaches are <b>James Cooke</b> (left first) and <b>Paul Magrath</b> (left second).
+    </p>
+    {% load static %}
+    <img class="img-fluid" src="{% static "parkwoods_app/team.jpg" %}" alt="team">
+	<a class="btn btn-lg btn-primary" href="{% url 'users:register' %}" role="button">Register &raquo;</a>
+  </div>
+</div>
+
+{% endblock page_header %}

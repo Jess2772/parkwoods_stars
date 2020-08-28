@@ -1,0 +1,99 @@
+{% load bootstrap4 %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1,
+    shrink-to-fit=no">
+  <title>Parkwoods Senior Midget Stars</title>
+
+  {% bootstrap_css %}
+  {% bootstrap_javascript jquery='full' %}
+
+</head>
+{% load static %}
+
+<body>
+
+  <nav class="navbar navbar-expand-md navbar-light bg-light mb-4 border">
+    <a class="navbar-brand" href="{% url 'parkwoods_app:index'%}"><img id="img-logo"
+        src="{% static "parkwoods_app/parkwoods.png" %}" style="width: 36px; height: 36px;">Parkwoods Midget Senior
+      Stars
+    </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+      aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item"><a class="nav-link" href="{% url 'parkwoods_app:topics'%}">Topics</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'parkwoods_app:rosters'%}">Roster</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'parkwoods_app:videos'%}">Video</a></li>
+        <div class="dropdown">
+          <a class="nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Standings</a></li>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="{% url 'parkwoods_app:standings'%}">Winter</a>
+            <a class="dropdown-item" href="{% url 'parkwoods_app:standings_playoff'%}">Playoffs</a>
+            <a class="dropdown-item" href="{% url 'parkwoods_app:standings_semi'%}">Semi-Finals</a>
+            <a class="dropdown-item" href="{% url 'parkwoods_app:standings_finals'%}">Finals</a>
+          </div>
+        </div>  
+
+        <div class="dropdown">
+          <a class="nav-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Game Schedule</a></li>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="{% url 'parkwoods_app:schedule'%}">Winter</a>
+            <a class="dropdown-item" href="{% url 'parkwoods_app:schedule_playoff'%}">Playoffs</a>
+            <a class="dropdown-item" href="{% url 'parkwoods_app:schedule_semi'%}">Semi-Finals</a>
+            <a class="dropdown-item" href="{% url 'parkwoods_app:schedule_finals'%}">Finals</a>
+          </div>
+        </div>
+        
+		<li class="nav-item"><a class="nav-link" href="{% url 'parkwoods_app:awards'%}">Medals & Trophies</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'parkwoods_app:aboutme' %}">About Me</a></li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        {% if user.is_authenticated %}
+        <li class="nav-item">
+          <span class="navbar-text" }">Hello, {{ user.username }}.</span>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'users:logout' %}">Log out</a>
+        </li>
+        {% else %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'users:register' %}">Register</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'users:login' %}">Log in</a></li>
+        {% endif %}
+      </ul>
+    </div>
+
+  </nav>
+
+  <main role="main" class="container">
+
+    {% block page_header %}{% endblock page_header %}
+
+
+    {% block content %}{% endblock content %}
+    <footer class="text-muted">
+      <div class="container">
+        <p class="float-right">
+          <a href="#">Back to top</a>
+        </p>
+        <p><a href="{% url 'parkwoods_app:aboutme' %}">&copy; Jesse Li </a>2019 | Powered by <a href="http://www.python.org"
+            target="_blank"> &reg; Python </a> <a href="https://www.djangoproject.com/" target="_blank"> &reg;
+            Django</a> <a href="https://getbootstrap.com/" target="_blank"> &reg; Bootstrap 4<a
+              href="http://www.heroku.com/" target="_blank"> &reg; Heroku</a>
+        </p>
+      </div>
+    </footer>
+  </main>
+
+
+</body>
+
+</html>

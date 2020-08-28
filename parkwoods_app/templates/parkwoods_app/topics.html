@@ -1,0 +1,25 @@
+{% extends "parkwoods_app/base.html" %}
+
+
+{% block page_header %}
+<div class="pb-2 mb-2 border-bottom">
+  <h1>Topics</h1>
+</div>
+{% endblock page_header %}
+
+
+{% block content %}
+<div>
+  <ul>
+    {% for topic in topics %}
+      <li><h3>
+        <a href="{% url 'parkwoods_app:topic' topic.id %}">{{ topic }}</a>
+      </h3></li>
+    {% empty %}
+      <li><h3>No topics have been added yet.</h3></li>
+    {% endfor %}
+  </ul>
+
+  <h3><a href="{% url 'parkwoods_app:new_topic' %}">Add a new topic</a></h3>
+</div>
+{% endblock content %}

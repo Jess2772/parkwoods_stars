@@ -1,0 +1,52 @@
+{% extends "parkwoods_app/base.html" %}
+
+{% block page_header %}
+{% load static %}
+<div class="pb-2 mb-2 border-bottom">
+  <div class="jumbotron">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card mb-4 shadow-sm" align="center">
+          <img class="img-fluid" src="{% static "parkwoods_app/aboutme.jpg" %}" alt="aboutme">
+        </div>
+      </div>
+      <div class="col-md-8">
+        <h1 class="display-4" align="center"><b>About Jesse Li</b></h1>
+        <p>
+          I am a grade 12 student going into my first-year at the <a href="https://uwaterloo.ca/" target="_blank">  University of Waterloo
+            </a> in Waterloo, Ontario for Computer Science. Growing up, I have always had
+          a passion for hockey and I am happy to be a part of Canadian culture. I have been playing at <a
+            href="http://www.parkwoodshockey.com/" target="_blank">Parkwoods Hockey League</a> for eleven years, and
+          have been on the select team for eight years.
+        </p>
+        <p>
+          At school, I am the head of tech crew club in charge of the audiovisual aspects of performances.
+          My job is to train newer members how to use the equipment and help them settle into the new
+          environment, assign duties and delegate roles, and communicate with other parties to ensure a smooth and
+          enjoyable event.
+        </p>
+        <p>
+          Outside of school, my interest in mathematics inspired me to become a teaching assistant at <a
+            href="https://www.spiritofmath.com/" target="_blank"> Spirit of Math</a>, where I assist younger students with their math work while promoting a positive and encouraging learning
+          environment.
+        </p>
+        <p>
+          Giving back to the community is something I believe everybody should experience. For me, I thought it would be a
+          great idea to share the hockey stories and skills I have gathered along the way by becoming a house league hockey coach. This opportunity allowed me to 
+          give the players the best experience on and off the ice,
+          just like what other coaches did for me.
+        </p>
+        <p>
+          I have created this website using the Python programming language and Django web framework to showcase my hockey experience. 
+		  Here, you will be able to see our team's short video clips, standings/schedules and various trophy winnigns. If you are registered,
+          you can also create a topic and share your thoughts with others.
+        </p>
+        <p>
+          2020 marks the end of my junior hockey and high school journey. I'm looking forward to a new chapter of
+          my life in 2020 and beyond.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock page_header %}

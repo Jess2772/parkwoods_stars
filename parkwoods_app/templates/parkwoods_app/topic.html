@@ -1,0 +1,35 @@
+{% extends 'parkwoods_app/base.html' %}
+
+{% block page_header %}
+<div class="pb-2 mb-2 border-bottom">
+  <h3>{{ topic }}</h3>
+</div>
+{% endblock page_header %}
+
+{% block content %}
+<div>
+  {% if user.is_authenticated %}
+  <p>
+    <a href="{% url 'parkwoods_app:new_entry' topic.id %}">Add new entry</a>
+  </p>
+  {% endif %}
+  <ul>
+    {% for entry in entries %}
+    <div class="card mb-3">
+      <h4 class="card-header">
+        {{ entry.date_added|date:'M d, Y H:i' }} (by {{ entry.owner }})
+        {% if user.is_authenticated and user.username == 'admin' %}
+        <small><a href="{% url 'parkwoods_app:edit_entry' entry.id %}">edit entry</a></small>
+        {% elif user.is_authenticated and entry.owner == request.user %}
+        <small><a href="{% url 'parkwoods_app:edit_entry' entry.id %}">edit entry</a></small>
+        {% endif %}
+      </h4>
+      <div class="card-body">
+        {{ entry.text|linebreaks }}
+      </div>
+    </div>
+    {% empty %}
+    <p>There are no entries for this topic yet.</p>
+    {% endfor %}
+</div>
+{% endblock content %}

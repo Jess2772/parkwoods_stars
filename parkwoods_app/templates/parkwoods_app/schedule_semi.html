@@ -1,0 +1,127 @@
+{% extends "parkwoods_app/base.html" %}
+
+{% block page_header %}
+{% endblock page_header %}
+
+{% block content %}
+{% load static %}
+<div class="container">
+    <h3>NYHL Midget Senior Tier 1 Schedule (2019 ~ 2020 Semi-Finals)</h3>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Away</th>
+                <th>Score</th>
+                <th>Home</th>
+                <th>Season</th>
+                <th>Venue</th>
+                <th>Update Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for myschedule in schedule %}
+
+            <tr class="{% cycle 'table-active' 'table-success' 'table-warning' 'table-light' %}">
+                <td nowrap>{{ myschedule.game_dt|date:'D M d, Y'  }}</td>
+                <td nowrap>{{ myschedule.game_time|date:'H:i' }}</td>
+                <td nowrap>
+                    {% if myschedule.away == 'Parkwoods Stars' %}
+                    <img style="height: 25px;" src="{% static "parkwoods_app/parkwoods.png" %}">
+                    {% elif myschedule.away == 'Vaughan Blue' %}
+                    <img style="height: 25px;" src="{% static "parkwoods_app/VaughanBlue.png" %}">
+                    {% elif myschedule.away == 'Amesbury White' %}
+                    <img style="height: 25px;" src="{% static "parkwoods_app/Amesbury.png" %}">
+                    {% elif myschedule.away == 'George Bell Navy' %}
+                    <img style="height: 25px;" src="{% static "parkwoods_app/GeorgeBellNavy.png" %}">
+                    {% elif myschedule.away == 'East York Blue' %}
+                    <img style="height: 25px;" src="{% static "parkwoods_app/EastYork.png" %}">
+                    {% elif myschedule.away == 'Scarborough' %}
+                    <img style="height: 25px;" src="{% static "parkwoods_app/Scarborough.png" %}">
+                    {% elif myschedule.away == 'Faustina Black' %}
+                    <img style="height: 25px;" src="{% static "parkwoods_app/FaustinaBlack.png" %}">
+                    {% elif myschedule.away == 'Duffield Red' %}
+                    <img style="height: 25px;" src="{% static "parkwoods_app/DuffieldRed.png" %}">
+                    {% elif myschedule.away == 'George Bell White' %}
+                    <img style="height: 25px;" src="{% static "parkwoods_app/GeorgeBellWhite.png" %}">
+                    {% else %}
+                    no logo
+                    {% endif %}
+                    {{ myschedule.away }}</td>
+                <td>{{ myschedule.score }}</td>
+                <td nowrap>
+                    {% if myschedule.home == 'Parkwoods Stars' %}
+                    <img style="height: 25px;" src="{% static "parkwoods_app/parkwoods.png" %}">
+                    {% elif myschedule.home == 'Vaughan Blue'  %}
+                    <img style="height: 25px;" src="{% static "parkwoods_app/VaughanBlue.png" %}">
+                    {% elif myschedule.home == 'Amesbury White' %}
+                    <img style="height: 25px;" src="{% static "parkwoods_app/Amesbury.png" %}">
+                    {% elif myschedule.home == 'George Bell Navy' %}
+                    <img style="height: 25px;" src="{% static "parkwoods_app/GeorgeBellNavy.png" %}">
+                    {% elif myschedule.home == 'East York Blue'%}
+                    <img style="height: 25px;" src="{% static "parkwoods_app/EastYork.png" %}">
+                    {% elif myschedule.home == 'Scarborough'%}
+                    <img style="height: 25px;" src="{% static "parkwoods_app/Scarborough.png" %}">
+                    {% elif myschedule.home == 'Faustina Black'  %}
+                    <img style="height: 25px;" src="{% static "parkwoods_app/FaustinaBlack.png" %}">
+                    {% elif myschedule.home == 'Duffield Red' %}
+                    <img style="height: 25px;" src="{% static "parkwoods_app/DuffieldRed.png" %}">
+                    {% elif myschedule.home == 'George Bell White' %}
+                    <img style="height: 25px;" src="{% static "parkwoods_app/GeorgeBellWhite.png" %}">					
+                    {% else %}
+                    no logo
+                    {% endif %}
+                    {{ myschedule.home }}</td>
+                <td>{{ myschedule.season }}</td>
+                
+				<td nowrap>
+				{% if 'Ted Reeve' in myschedule.venue %}
+					<a href="http://maps.google.com/maps?&amp;q=loc:175 Main St, Toronto, ON M4E 2W2&amp;z=17" target="_blank" >
+				{% elif 'Al Palladini' in myschedule.venue %}
+					<a href="http://maps.google.com/maps?&amp;q=loc:9201 Islington Ave.  Woodbridge, ON L4L1A6&amp;z=17" target="_blank">
+				{% elif 'Commander Park ' in myschedule.venue %}
+					<a href="http://maps.google.com/maps?&amp;q=loc:140 Commander Blvd.  Scarborough, ON M1S3H7&amp;z=17" target="_blank">
+				{% elif 'Downsview' in myschedule.venue %}
+					<a href="http://maps.google.com/maps?&amp;q=loc:1633 Wilson Ave.  North York, ON M3L1A5&amp;z=17" target="_blank" >
+				{% elif 'Ford Preformance Centre' in myschedule.venue %}	
+					<a href="http://maps.google.com/maps?&amp;q=loc:400 Kipling Ave, Etobicoke, ON M8V 3L1&amp;z=17" target="_blank" >
+				{% elif 'George Bell' in myschedule.venue %}	
+					<a href="http://maps.google.com/maps?&amp;q=loc:215 Ryding Ave.  Toronto, ON M6N1H6&amp;z=17" target="_blank" >				
+				{% elif 'Weston' in myschedule.venue %}	
+					<a href="http://maps.google.com/maps?&amp;q=loc:2125 Lawrence Ave. W  York, ON M9N1H7&amp;z=17" target="_blank" >
+				{% elif 'East York' in myschedule.venue %}	
+					<a href="http://maps.google.com/maps?&amp;q=loc:888 Cosburn Ave.  East York, ON M4C2W6&amp;z=17" target="_blank" >
+				{% elif 'Garnet Williams' in myschedule.venue %}	
+					<a href="http://maps.google.com/maps?&amp;q=loc:501 Clark Ave. W  Thornhill, ON L4J4E5&amp;z=17" target="_blank" >
+				{% elif 'Fenside' in myschedule.venue %}	
+					<a href="http://maps.google.com/maps?&amp;q=loc:30 Slidell Crescent, North York, ON M3A 2C4" target="_blank" >
+				{% elif 'Chesswood' in myschedule.venue %}	
+					<a href="http://maps.google.com/maps?&amp;q=loc:4000 Chesswood Dr.  North York, ON M3J2B9&amp;z=17" target="_blank" >
+				{% elif 'Habitant' in myschedule.venue %}	
+					<a href="http://maps.google.com/maps?&amp;q=loc:3383 Weston Rd.  North York, ON M9M2V9&amp;z=17" target="_blank" >
+				{% elif 'John Booth' in myschedule.venue %}	
+					<a href="http://maps.google.com/maps?&amp;q=loc:230 Gosford Blvd.  North York, ON M3N2H1&amp;z=17" target="_blank" >
+				{% elif 'Pleasantview' in myschedule.venue %}	
+					<a href="http://maps.google.com/maps?&amp;q=loc:545 Van Horne Ave.  North York, ON M2J4S8&amp;z=17" target="_blank" >
+				{% elif 'Victoria Village' in myschedule.venue %}	
+					<a href="http://maps.google.com/maps?&amp;q=loc:190 Bermondsey Rd.  North York, ON M4A1Y1&amp;z=17" target="_blank" >
+				{% elif 'Amesbury' in myschedule.venue %}	
+					<a href="http://maps.google.com/maps?&amp;q=loc:155 Culford Rd.  North York, ON M6M4K6&amp;z=17" target="_blank" >
+
+				{% else %}
+					
+				{% endif %}
+				{{ myschedule.venue }}</a>{% if myschedule.home == 'Parkwoods Stars' or  myschedule.away == 'Parkwoods Stars'%}<a href="https://1drv.ms/u/s!AilqDLjqHaNap06uS9h54hjbqFcV?e=ntCb7v" target="_blank" ><img style="height: 25px;" src="{% static "parkwoods_app/camera.png" %}" alt="video"></a>{% endif %}				
+				</td>
+				
+                <td nowrap>{{ myschedule.date_added|date:'M d, Y H:i' }}</td>
+            </tr>           
+
+        {% endfor %}
+        </tbody>
+    </table>
+    <p><b>LEGEND: WY20</b> - Winter 2020; <b>PL20</b> - Playoff 2020; <b>SF20</b> - Semi-Final 2020; <b>FN20</b> - Final 2020
+</div>
+
+{% endblock content %}

@@ -1,0 +1,109 @@
+{% extends "parkwoods_app/base.html" %}
+
+
+{% block page_header %}
+<section class="jumbotron text-center">
+  <div class="container">
+    <h1>Parkwoods Senior Midget Stars (born in 2002)</h1>
+    <p class="lead text-muted">Short highlights video clips</p>
+    <p>
+
+      <a href="https://1drv.ms/u/s!AilqDLjqHaNap06uS9h54hjbqFcV?e=ntCb7v" class="btn btn-primary my-2" target="_blank">Full length game
+        videos &raquo;</a>
+    </p>
+  </div>
+</section>
+{% endblock page_header %}
+
+{% block content %}
+{% load static %}
+<div class="album py-5 bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card mb-4 shadow-sm">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item"
+              src="{% static "parkwoods_app/CoachAddressing.mp4" %}" allowfullscreen></iframe>
+          </div>
+
+          <div class="card-body">
+            <p class="card-text">Coach Francis Cooke addressed to rosters before Shamrock Tournament Finals at
+              Canlan Ice Sports, Scarborough. April 21st, 2019.</p>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card mb-4 shadow-sm">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item"
+              src="{% static "parkwoods_app/Jesse-Goal-1.mp4" %}"
+              allowfullscreen></iframe>
+          </div>
+          <div class="card-body">
+            <p class="card-text">I was called up to play for NYHL Tier 3 "Parkwoods Stars Senior Midget" semi-finals game 4. The team advanced to finals and won the championship. April 7th, 2019.</p>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card mb-4 shadow-sm">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item"
+              src="{% static "parkwoods_app/Jesse-Goal-2.mp4" %}"
+              allowfullscreen></iframe>
+          </div>
+          <div class="card-body">
+            <p class="card-text">NYHL Tier 1 semi-finals versus George Bell Navy, March 28th, 2019.</p>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card mb-4 shadow-sm">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item"
+              src="{% static "parkwoods_app/Jesse-Goal-3.mp4" %}"
+              allowfullscreen></iframe>
+          </div>
+          <div class="card-body">
+            <p class="card-text">The goal was made within 3.6 seconds remaining in the second overtime period during 2014 Ajax Winter Tournament finals. Dec. 29th, 2014.</p>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card mb-4 shadow-sm">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item"
+              src="{% static "parkwoods_app/Jesse-Goal-4.mp4" %}"
+              allowfullscreen></iframe>
+          </div>
+          <div class="card-body">
+            <p class="card-text">Thornhill Thanksgiving Tournament versus Halton Hills. October 13th, 2019.</p>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+		<div class="card mb-4 shadow-sm">
+			<div class="embed-responsive embed-responsive-16by9">
+				<iframe class="embed-responsive-item"
+				  src="{% static "parkwoods_app/jesse-coaching.mp4" %}"
+				  allowfullscreen></iframe>
+			</div>
+			<div class="card-body">
+				<p class="card-text">I am the head coach of Parkwoods House League Bantam stars two years in a row. Dec. 7th, 2019.</p>
+			</div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+
+{% endblock content %}
