@@ -32,6 +32,10 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'parkwoods_app',
+    'users',
+    'bootstrap4',
+    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -39,9 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'parkwoods_app',
-    'users',
-    'bootstrap4',
+    
 ]
 
 MIDDLEWARE = [
