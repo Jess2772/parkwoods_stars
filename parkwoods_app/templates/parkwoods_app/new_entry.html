@@ -9,7 +9,7 @@
 <form action="{% url 'parkwoods_app:new_entry' topic.id %}" method='post'>
     {% csrf_token %}
     {{ form.as_p }}
-    <button name='submit'>Add entry</button>
+    <button name='submit'>Add Entry</button>
 </form>
 
 {% endblock content %}

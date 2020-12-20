@@ -10,7 +10,7 @@
 <form action="{% url 'parkwoods_app:edit_entry' entry.id %}" method='post'>
     {% csrf_token %}
     {{ form.as_p }}
-    <button name='submit'>Save changes</button>
+    <button name='submit'>Save Changes</button>
 </form>
 
 {% endblock content %}
