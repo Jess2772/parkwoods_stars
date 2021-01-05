@@ -5,7 +5,7 @@
 * Includes roster, videos, schedule, trophies
 
 ## Technologies
-* Python 3.6.2
+* Python 3.7.2
 * Django Web Framework
 * HTML/CSS
 * Bootstrap 4
