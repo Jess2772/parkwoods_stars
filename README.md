@@ -3,6 +3,7 @@
 ## General Info
 * This website was created to showcase the Parkwoods Stars Select Hockey team.
 * Includes roster, videos, schedule, trophies
+* Registered users can create discussion topics, post entries, and view a variety of photos/videos
 
 ## Technologies
 * Python 3.7.2
